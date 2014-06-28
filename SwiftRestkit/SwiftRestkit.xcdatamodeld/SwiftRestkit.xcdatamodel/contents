@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6172.15" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Project" representedClassName="Project" syncable="YES">
+        <attribute name="appStore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disciplines" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="favicon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playStore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasTeamMembers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TeamMember" inverseName="inProject" inverseEntity="TeamMember" syncable="YES"/>
+    </entity>
+    <entity name="TeamMember" representedClassName="TeamMember" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="inProject" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Project" inverseName="hasTeamMembers" inverseEntity="Project" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Project" positionX="-308" positionY="-85" width="128" height="180"/>
+        <element name="TeamMember" positionX="-27" positionY="72" width="128" height="103"/>
+    </elements>
+</model>
